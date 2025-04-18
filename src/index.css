@@ -6,6 +6,11 @@
   margin-bottom: 8px;
 }
 
+body {
+  background-color: #fff;
+  color: #000;
+}
+
 .game-table-skeleton {
   width: 332px !important;
   height: 332px !important;

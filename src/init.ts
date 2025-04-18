@@ -18,6 +18,7 @@ import {
   backButton,
   miniApp,
   settingsButton,
+  viewport,
 } from "@telegram-apps/sdk-react";
 
 export async function init(options: {
@@ -67,17 +68,17 @@ export async function init(options: {
     throw new Error("ERR_NOT_SUPPORTED");
   }
 
-//   if (!settingsButton.isSupported() || !miniApp.isSupported()) {
-//     throw new Error("ERR_NOT_SUPPORTED");
-//   }
+  //   if (!settingsButton.isSupported() || !miniApp.isSupported()) {
+  //     throw new Error("ERR_NOT_SUPPORTED");
+  //   }
 
-//   if (!swipeBehavior.isSupported() || !swipeBehavior.isSupported()) {
-//     throw new Error("ERR_NOT_SUPPORTED");
-//   }
+  //   if (!swipeBehavior.isSupported() || !swipeBehavior.isSupported()) {
+  //     throw new Error("ERR_NOT_SUPPORTED");
+  //   }
 
-//   swipeBehavior.mount();
+  //   swipeBehavior.mount();
 
-//   console.log("cloud storage is " + cloudStorage.isSupported());
+  //   console.log("cloud storage is " + cloudStorage.isSupported());
 
   mountBackButton.ifAvailable();
   settingsButton.mount();
@@ -92,7 +93,11 @@ export async function init(options: {
       mountViewport().then(() => {
         bindViewportCssVars();
         expandViewport();
-        swipeBehavior.isMounted() && disableVerticalSwipes();
+
+        if (viewport.requestFullscreen.isAvailable()) {
+          viewport.requestFullscreen();
+          viewport.isFullscreen();
+        }
       }),
   ]);
 }
