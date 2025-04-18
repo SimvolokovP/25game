@@ -1,0 +1,57 @@
+.game-table {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 360px;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.game-table-skeleton {
+  width: 332px !important;
+  height: 332px !important;
+  margin-bottom: 8px;
+}
+
+.game-table-skeleton div {
+  width: 332px !important;
+  height: 332px !important;
+}
+
+.game-page,
+.main-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 8px;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.greeting__title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.loading-screen {
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 220;
+  gap: 8px;
+  width: 100vw;
+  left: 0;
+  right: 0;
+}
