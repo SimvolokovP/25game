@@ -32,7 +32,7 @@ const startApp = async () => {
 
     root.render(
       <StrictMode>
-        <BrowserRouter>
+        <BrowserRouter basename="/25game">
           <App />
         </BrowserRouter>
       </StrictMode>
